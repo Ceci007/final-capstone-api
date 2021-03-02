@@ -3,7 +3,6 @@ class Api::V1::IllnessesController < ApplicationController
   before_action :find_illness, only: %i[show update destroy]
 
   def index
-    # @illnesses = Illness.all
     render json: @user.illnesses
   end
 
