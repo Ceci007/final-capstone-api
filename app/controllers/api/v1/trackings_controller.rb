@@ -7,16 +7,7 @@ class Api::V1::TrackingsController < ApplicationController
   end
 
   def show
-    if @tracking.medicines
-      @content = {
-        tracking: @tracking,
-        medicines: @tracking.medicines,
-        symptoms: @tracking.symptoms
-      }
-      render json: @content
-    else
-      render json: @tracking
-    end
+    render json: @tracking
   end
 
   def create

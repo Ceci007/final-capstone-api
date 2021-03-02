@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_02_191324) do
+ActiveRecord::Schema.define(version: 2021_03_02_194137) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -48,6 +48,8 @@ ActiveRecord::Schema.define(version: 2021_03_02_191324) do
     t.float "temperature"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "medicines", default: [], array: true
+    t.string "symptons", default: [], array: true
     t.index ["illness_id"], name: "index_trackings_on_illness_id"
   end
 

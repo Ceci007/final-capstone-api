@@ -7,10 +7,7 @@ Rails.application.routes.draw do
       get '/logged_in', to: 'sessions#is_logged_in?'
       resources :users, only: [:create, :show, :index] do
         resources :illnesses do
-          resources :trackings do
-            resources :medicines
-            resources :symptons
-          end
+          resources :trackings
         end
       end
     end
