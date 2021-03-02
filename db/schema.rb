@@ -10,53 +10,52 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_02_153614) do
-
-  create_table "illnesses", force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.string "description"
-    t.string "name"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_illnesses_on_user_id"
+ActiveRecord::Schema.define(version: 20_210_302_153_614) do
+  create_table 'illnesses', force: :cascade do |t|
+    t.integer 'user_id', null: false
+    t.string 'description'
+    t.string 'name'
+    t.datetime 'created_at', precision: 6, null: false
+    t.datetime 'updated_at', precision: 6, null: false
+    t.index ['user_id'], name: 'index_illnesses_on_user_id'
   end
 
-  create_table "medicines", force: :cascade do |t|
-    t.integer "tracking_id", null: false
-    t.string "name"
-    t.float "quantity"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["tracking_id"], name: "index_medicines_on_tracking_id"
+  create_table 'medicines', force: :cascade do |t|
+    t.integer 'tracking_id', null: false
+    t.string 'name'
+    t.float 'quantity'
+    t.datetime 'created_at', precision: 6, null: false
+    t.datetime 'updated_at', precision: 6, null: false
+    t.index ['tracking_id'], name: 'index_medicines_on_tracking_id'
   end
 
-  create_table "symptoms", force: :cascade do |t|
-    t.integer "tracking_id", null: false
-    t.string "name"
-    t.integer "intensity"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["tracking_id"], name: "index_symptoms_on_tracking_id"
+  create_table 'symptoms', force: :cascade do |t|
+    t.integer 'tracking_id', null: false
+    t.string 'name'
+    t.integer 'intensity'
+    t.datetime 'created_at', precision: 6, null: false
+    t.datetime 'updated_at', precision: 6, null: false
+    t.index ['tracking_id'], name: 'index_symptoms_on_tracking_id'
   end
 
-  create_table "trackings", force: :cascade do |t|
-    t.integer "illness_id", null: false
-    t.datetime "date"
-    t.integer "mood"
-    t.float "temperature"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["illness_id"], name: "index_trackings_on_illness_id"
+  create_table 'trackings', force: :cascade do |t|
+    t.integer 'illness_id', null: false
+    t.datetime 'date'
+    t.integer 'mood'
+    t.float 'temperature'
+    t.datetime 'created_at', precision: 6, null: false
+    t.datetime 'updated_at', precision: 6, null: false
+    t.index ['illness_id'], name: 'index_trackings_on_illness_id'
   end
 
-  create_table "users", force: :cascade do |t|
-    t.string "username"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+  create_table 'users', force: :cascade do |t|
+    t.string 'username'
+    t.datetime 'created_at', precision: 6, null: false
+    t.datetime 'updated_at', precision: 6, null: false
   end
 
-  add_foreign_key "illnesses", "users"
-  add_foreign_key "medicines", "trackings"
-  add_foreign_key "symptoms", "trackings"
-  add_foreign_key "trackings", "illnesses"
+  add_foreign_key 'illnesses', 'users'
+  add_foreign_key 'medicines', 'trackings'
+  add_foreign_key 'symptoms', 'trackings'
+  add_foreign_key 'trackings', 'illnesses'
 end
