@@ -13,6 +13,7 @@ class Api::V1::UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
+      login!
       render json: @user
     else
 
@@ -45,6 +46,6 @@ class Api::V1::UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:username)
+    params.require(:user).permit(:username, :password, :password_confirmation)
   end
 end
