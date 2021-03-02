@@ -1,4 +1,4 @@
-class Api::V1::TrackingsController < ApplicationController
+class TrackingsController < ApplicationController
   before_action :find_illness
   before_action :find_tracking, only: %i[show update destroy]
 

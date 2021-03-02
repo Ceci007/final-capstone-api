@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_02_194137) do
+ActiveRecord::Schema.define(version: 2021_03_02_213915) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -21,24 +21,6 @@ ActiveRecord::Schema.define(version: 2021_03_02_194137) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_illnesses_on_user_id"
-  end
-
-  create_table "medicines", force: :cascade do |t|
-    t.bigint "tracking_id", null: false
-    t.string "name"
-    t.float "quantity"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["tracking_id"], name: "index_medicines_on_tracking_id"
-  end
-
-  create_table "symptoms", force: :cascade do |t|
-    t.bigint "tracking_id", null: false
-    t.string "name"
-    t.integer "intensity"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["tracking_id"], name: "index_symptoms_on_tracking_id"
   end
 
   create_table "trackings", force: :cascade do |t|
@@ -55,13 +37,11 @@ ActiveRecord::Schema.define(version: 2021_03_02_194137) do
 
   create_table "users", force: :cascade do |t|
     t.string "username"
+    t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "password_digest"
   end
 
   add_foreign_key "illnesses", "users"
-  add_foreign_key "medicines", "trackings"
-  add_foreign_key "symptoms", "trackings"
   add_foreign_key "trackings", "illnesses"
 end
