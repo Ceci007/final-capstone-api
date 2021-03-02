@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root 'static_page#home'
   namespace :api do
     namespace :v1 do
       resources :users do
