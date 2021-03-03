@@ -1,4 +1,7 @@
 class SessionsController < ApplicationController
+  def new
+  end
+
   def create
     @user = User.find_by(username: session_params[:username])
 
@@ -41,6 +44,6 @@ class SessionsController < ApplicationController
   private
 
   def session_params
-    params.require(:user).permit(:username, :password)
+    params.permit(:username, :password)
   end
 end
