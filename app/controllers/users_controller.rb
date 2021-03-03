@@ -24,7 +24,7 @@ class UsersController < ApplicationController
         status: 500,
         errors: ['user not found']
       }
-     end
+    end
   end
 
   def create
@@ -41,7 +41,7 @@ class UsersController < ApplicationController
         errors: @user.errors.full_messages
       }
     end
-    end
+  end
 
   def update
     @user = User.find(params[:id])
