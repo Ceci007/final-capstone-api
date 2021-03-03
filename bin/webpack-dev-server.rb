@@ -1,5 +1,5 @@
 ENV['RAILS_ENV'] ||= ENV['RACK_ENV'] || 'development'
-ENV['NODE_ENV']  ||= 'development'
+ENV['NODE_ENV'] ||= 'development'
 
 require 'pathname'
 ENV['BUNDLE_GEMFILE'] ||= File.expand_path('../../Gemfile',
