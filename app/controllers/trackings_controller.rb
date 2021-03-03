@@ -17,7 +17,7 @@ class TrackingsController < ApplicationController
       render json: @tracking
     else
 
-      render error: { error: 'Unable to create Date' }, status: 400
+      render json: { error: 'Unable to create Date' }, status: 400
     end
   end
 
@@ -26,7 +26,6 @@ class TrackingsController < ApplicationController
       @tracking.update(tracking_params)
       render json: { message: 'Date succesfully updated' }, status: 200
     else
-
       render json: { error: 'Unable to update Date' }, status: 400
     end
   end
@@ -36,7 +35,6 @@ class TrackingsController < ApplicationController
       @tracking.destroy
       render json: { message: 'Date succesfully deleted' }, status: 200
     else
-
       render json: { error: 'Unable to delete Date' }, status: 400
     end
   end
@@ -44,7 +42,7 @@ class TrackingsController < ApplicationController
   private
 
   def tracking_params
-    params.require(:tracking).permit(:id, :date, :mood, :temperature, :illness_id, :medicines => [], :symptons => [])
+    params.require(:tracking).permit(:id, :date, :mood, :temperature, :illness_id, medicines: [], symptons: [])
   end
 
   def find_tracking

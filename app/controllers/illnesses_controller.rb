@@ -12,12 +12,11 @@ class IllnessesController < ApplicationController
 
   def create
     @illness = Illness.new(illness_params)
-
     if @illness.save
       render json: @illness
     else
 
-      render error: { error: 'Unable to create Illness' }, status: 400
+      render json: { error: 'Unable to create Illness' }, status: 400
     end
   end
 
@@ -26,7 +25,6 @@ class IllnessesController < ApplicationController
       @illness.update(illness_params)
       render json: { message: 'Illness succesfully updated' }, status: 200
     else
-
       render json: { error: 'Unable to update Illness' }, status: 400
     end
   end
@@ -36,7 +34,6 @@ class IllnessesController < ApplicationController
       @illness.destroy
       render json: { message: 'Illness succesfully deleted' }, status: 200
     else
-
       render json: { error: 'Unable to delete Illness' }, status: 400
     end
   end
@@ -44,7 +41,7 @@ class IllnessesController < ApplicationController
   private
 
   def illness_params
-    params.require(:illness).permit(:name, :description, :user_id)
+    params.require(:illness).permit(:name, :description, :user_id, :id)
   end
 
   def find_user
