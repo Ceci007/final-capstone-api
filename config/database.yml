@@ -103,3 +103,4 @@ production:
   <<: *default
   database: finalproject_api_production
   username: postgres
+  password: <%= ENV['POSTGRES_DATABASE_PASSWORD'] %>
