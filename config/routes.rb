@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   post '/createill', to: 'illnesses#create'
   post '/createday', to: 'trackings#create'
+  patch '/updateill', to: 'illnesses#update'
+  patch '/updateday', to: 'trackings#update'
   delete '/logout', to: 'sessions#destroy'
   delete '/deleteill', to: 'illnesses#destroy'
   delete '/deleteday', to: 'trackings#destroy'
