@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 # rubocop:disable LineLength
 user1 = User.create(username: 'Ceci', password: 'password123')
-user2 = User.create(username: 'Sol', password: 'password1234')
+user2 = User.create(username: 'Soledad', password: 'password1234')
 
 illness1 = Illness.create(user_id: 1, name: 'Colitis', description: 'Stomachache')
 illness2 = Illness.create(user_id: 1, name: 'Headache')
