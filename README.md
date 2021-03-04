@@ -13,7 +13,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-The objective of this project was to create a tracking App in which a user is presented with a list of things to be measured. I used Ruby on Rails for the Back-End API.
+The objective of this project was to create a tracking App in which a user is presented with a list of things to be measured. In this app we have users, illness and tracking tables so is an app about health care.
 
 ![users screenshot](./users_screenshot.png)
 
