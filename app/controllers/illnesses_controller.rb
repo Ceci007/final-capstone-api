@@ -1,4 +1,3 @@
-  
 class IllnessesController < ApplicationController
   before_action :find_user
   before_action :find_illness, only: %i[show update destroy]
