@@ -42,7 +42,7 @@ class IllnessesController < ApplicationController
   private
 
   def illness_params
-    params.require(:illness).permit(:name, :description, :user_id)
+    params.permit(:name, :description, :user_id)
   end
 
   def find_user
