@@ -5,13 +5,13 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-# rubocop:disable LineLength
-user1 = User.create(username: 'Ceci', password: 'password123')
-user2 = User.create(username: 'Soledad', password: 'password1234')
+# rubocop:disable Layout/LineLength
+# user1 = User.create(username: 'Ceci', password: 'password123')
+# user2 = User.create(username: 'Soledad', password: 'password1234')
 
-illness1 = Illness.create(user_id: 1, name: 'Colitis', description: 'Stomachache')
-illness2 = Illness.create(user_id: 1, name: 'Headache')
+# illness1 = Illness.create(user_id: 1, name: 'Colitis', description: 'Stomachache')
+# illness2 = Illness.create(user_id: 1, name: 'Headache')
 
-tracking1 = Tracking.create(illness_id: 1, date: "2021-03-03", mood: '🙂', temperature: 36.5, medicines: ["Omeprazol", "Peptobismol"], symptons: ["Weakness", "Stomachache"])
-tracking2 = Tracking.create(illness_id: 1, date: "2021-03-04", mood: '🙁', temperature: 36.7)
-# rubocop:enable LineLength
+# tracking1 = Tracking.create(illness_id: 1, date: '2021-03-03', mood: '', temperature: 36.5, medicines: %w[Omeprazol Peptobismol], symptons: %w[Weakness Stomachache])
+# tracking2 = Tracking.create(illness_id: 1, date: '2021-03-04', mood: '', temperature: 36.7)
+# rubocop:enable Layout/LineLength

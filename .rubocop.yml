@@ -3,7 +3,7 @@ AllCops:
   Exclude:
     - "Guardfile"
     - "Rakefile"
-
+    - 'node_modules/**/*'
   DisplayCopNames: true
 
 Layout/LineLength:
@@ -16,7 +16,7 @@ Metrics/ClassLength:
   Max: 150
 Metrics/BlockLength:
   IgnoredMethods: ['describe']
-  Max: 30
+  Max: 100
 
 
 Style/Documentation:
